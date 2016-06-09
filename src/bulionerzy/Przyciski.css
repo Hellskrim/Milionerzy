@@ -1,0 +1,21 @@
+.button1{
+    -fx-blend-mode: color-burn;
+    -fx-text-fill: #f2ff00;
+    -fx-font-size: 19px;
+}
+.button2{
+    -fx-font-size: 12px;
+    -fx-background-color: rgba(0,0,0,0.6);
+    -fx-text-fill: white;
+    -fx-blend-mode: null;
+    
+}
+.button2:hover{
+    -fx-background-color: yellow;
+    -fx-text-fill: black;
+}
+.button3{
+    -fx-blend-mode: color-burn;
+    -fx-text-fill: #f2ff00;
+    -fx-font-size: 13px;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bulionerzy.FXMLGraController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="768.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../gra.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="odp1" layoutX="59.0" layoutY="341.0" mnemonicParsing="false" onAction="#OdpowiedzA" prefHeight="3.0" prefWidth="170.0" styleClass="button2" stylesheets="@Przyciski.css" text="Button" />
+      <Button fx:id="odp2" layoutX="318.0" layoutY="341.0" mnemonicParsing="false" onAction="#OdpowiedzB" prefHeight="25.0" prefWidth="170.0" styleClass="button2" stylesheets="@Przyciski.css" text="Button" />
+      <Button fx:id="odp3" layoutX="59.0" layoutY="381.0" mnemonicParsing="false" onAction="#OdpowiedzC" prefHeight="25.0" prefWidth="170.0" styleClass="button2" stylesheets="@Przyciski.css" text="Button" />
+      <Button fx:id="odp4" layoutX="318.0" layoutY="381.0" mnemonicParsing="false" onAction="#OdpowiedzD" prefHeight="25.0" prefWidth="170.0" styleClass="button2" stylesheets="@Przyciski.css" text="Button" />
+      <Button fx:id="menu" blendMode="OVERLAY" layoutX="558.0" layoutY="14.0" mnemonicParsing="false" onAction="#Wroc" prefHeight="25.0" prefWidth="170.0" textAlignment="CENTER" />
+      <Ellipse fx:id="wygrana" blendMode="GREEN" fill="#bac7d3" layoutX="640.0" layoutY="387.0" opacity="0.41" radiusX="118.0" radiusY="11.0" stroke="BLACK" strokeLineCap="BUTT" strokeType="OUTSIDE" />
+      <Label fx:id="tresc" alignment="CENTER" layoutX="58.0" layoutY="276.0" prefHeight="48.0" prefWidth="408.0" textAlignment="CENTER" textFill="#f8f5f5" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="polNapol" layoutX="536.0" layoutY="45.0" mnemonicParsing="false" onAction="#chowajKolo1" prefHeight="36.0" prefWidth="59.0" styleClass="button1" stylesheets="@Przyciski.css" />
+      <Button fx:id="publicznosc" layoutX="683.0" layoutY="45.0" mnemonicParsing="false" onAction="#chowajKolo3" prefHeight="36.0" prefWidth="59.0" styleClass="button1" stylesheets="@Przyciski.css" />
+      <Button fx:id="telefon" layoutX="605.0" layoutY="45.0" mnemonicParsing="false" onAction="#chowajKolo2" prefHeight="36.0" prefWidth="66.0" styleClass="button1" stylesheets="@Przyciski.css" />
+      <Button fx:id="Koniec" layoutY="2.0" managed="true" mnemonicParsing="false" onAction="#Koniec" prefHeight="430.0" prefWidth="768.0" text="Koniec!" visible="false" />
+      <Line fx:id="linia1" endX="30.0" layoutX="566.0" layoutY="64.0" startX="-30.0" stroke="RED" strokeWidth="3.0" visible="false" />
+      <Line fx:id="linia2" endX="30.0" layoutX="640.0" layoutY="65.0" startX="-30.0" stroke="RED" strokeWidth="3.0" visible="false" />
+      <Line fx:id="linia3" endX="30.0" layoutX="713.0" layoutY="65.0" startX="-30.0" stroke="RED" strokeWidth="3.0" visible="false" />
+      <AnchorPane fx:id="kolo_tel" visible="false">
+         <children>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bulio.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="wroc1" layoutX="358.0" layoutY="374.0" mnemonicParsing="false" onAction="#chowajKolo2" prefHeight="50.0" prefWidth="75.0" styleClass="button1" stylesheets="@Przyciski.css" text="Wróć" />
+            <TextField fx:id="przyjaciel" editable="false" layoutX="202.0" layoutY="151.0" prefHeight="132.0" prefWidth="357.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <Blend>
+                     <topInput>
+                        <DropShadow />
+                     </topInput>
+                  </Blend>
+               </effect>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="kolo_pub" prefHeight="432.0" prefWidth="768.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bulio.jpg" />
+               </image>
+            </ImageView>
+            <BarChart fx:id="bc" barGap="100.0" prefHeight="320.0" prefWidth="775.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Button fx:id="wroc2" layoutX="358.0" layoutY="374.0" mnemonicParsing="false" onAction="#chowajKolo3" prefHeight="50.0" prefWidth="75.0" styleClass="button1" stylesheets="@Przyciski.css" text="Wróć" />
+         </children>
+      </AnchorPane>
+     
+   </children>
+</AnchorPane>
